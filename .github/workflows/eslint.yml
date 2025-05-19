@@ -30,9 +30,12 @@ jobs:
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
         run: |
+          echo "Running ESLint..."
           npx eslint style/style.js \
             --format @microsoft/eslint-formatter-sarif \
-            --output-file eslint-results.sarif
+            --output-file eslint-results.sarif || echo "ESLint exited with error code $?"
+          echo "Done running ESLint. Listing files:"
+          ls -la
         continue-on-error: true
 
       - name: Check if SARIF file was created
