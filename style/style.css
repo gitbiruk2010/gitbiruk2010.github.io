@@ -1,0 +1,255 @@
+/* Base Styles and Theme Setup */
+:root {
+  --bg-color-dark: #000000;
+  --text-color-dark: #FFFFFF;
+  --bg-color-light: #FFFFFF;
+  --text-color-light: #1a1a1a;
+  --accent-color: #00bcd4;   /* Accent color for links, e.g., teal */
+  --accent-color-light: #007b8f;
+  --card-bg-dark: #1e1e1e;
+  --card-bg-light: #f9f9f9;
+}
+
+/* Default to dark theme */
+body {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body.light-theme {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Global text elements */
+h1, h2, h3 {
+  margin-top: 1em;
+}
+p {
+  line-height: 1.6;
+}
+
+/* Links styling */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Adjust link color in light theme */
+body.light-theme a {
+  color: var(--accent-color-light);
+  background: #eaeaea;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  background: #111;  /* dark nav background */
+}
+
+body.light-theme .navbar {
+  background: #eaeaea;  /* light nav background */
+}
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.nav-links li {
+  margin: 0 0.5em;
+}
+.nav-links a {
+  color: inherit;         /* inherit text color (white or dark) */
+  font-weight: bold;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+/* Theme toggle button */
+#theme-toggle {
+  cursor: pointer;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  color: inherit;
+}
+#theme-toggle:focus {
+  outline: 2px solid #888;
+}
+/* (The theme icon inside will switch via script – sun for dark mode, moon for light mode) */
+
+/* Banner Section */
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-content {
+  margin-top: 30vh;
+  padding: 2em 1em;
+}
+
+/* Code flow overlay in banner */
+.code-flow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30vh;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.code-flow-inner {
+  animation: scrollUp 18s linear infinite; /* 👈 adjust timing here */
+  display: inline-block;
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* scroll one copy, then loop */
+}
+
+.code-flow pre {
+  font-family: monospace;
+  font-size: 1em;
+  line-height: 1.2em;
+  color: #00ff55;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* End of Banner Section */
+
+/* Main Content Sections */
+main {
+  padding: 5em 1em 1em;;
+}
+
+/* Card / Practicum Progress Update Styles */
+.card {
+  background: var(--card-bg-dark);
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 800px;
+  border-radius: 8px;
+}
+body.light-theme .card {
+  background: var(--card-bg-light);
+}
+.card h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Accordion (Collapsible Sections) Styles */
+.accordion {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.8em;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin-top: 0.5em;
+  font-size: 1em;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.accordion:hover {
+  background-color: #444;
+}
+body.light-theme .accordion {
+  background-color: #ddd;
+  color: #000;
+}
+body.light-theme .accordion:hover {
+  background-color: #ccc;
+}
+/* Add plus/minus icons to accordion buttons using ::after */
+.accordion::after {
+  content: '\02795';  /* Unicode plus (+) */
+  font-size: 1em;
+  float: right;
+  margin-left: 5px;
+}
+.accordion.active::after {
+  content: '\2796';   /* Unicode minus (−) */
+}
+
+/* Collapsible content panel */
+.panel {
+  background-color: #222;
+  color: #ccc;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1em;
+  transition: max-height 0.3s ease-out;
+}
+body.light-theme .panel {
+  background-color: #f1f1f1;
+  color: #333;
+}
+.panel p {
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+/* Projects Grid and Card Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive columns:contentReference[oaicite:3]{index=3} */
+  gap: 1.5em;
+  padding: 1em;
+}
+.project-card {
+  background: var(--card-bg-dark);
+  padding: 1em;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+body.light-theme .project-card {
+  background: var(--card-bg-light);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.project-card h3 {
+  margin-top: 0;
+}
+.project-card p {
+  line-height: 1.4;
+}
+.project-card a {
+  font-weight: bold;
+}
