@@ -23,6 +23,7 @@ The main page features:
 | `projects.html` | School Project cards linking to GitHub repos |
 | `contact.html` | GitHub profile & dev blurb |
 
+URL: https://gitbiruk2010.github.io/ 
 ---
 
 ## Technologies Used
