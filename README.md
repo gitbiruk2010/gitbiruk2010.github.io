@@ -1,4 +1,4 @@
-# gitbiruk2010.github.io — Developer Portfolio
+# Developer Portfolio
 
 Welcome to my interactive, animated, and slightly sarcastic developer portfolio hosted via GitHub Pages.
 
