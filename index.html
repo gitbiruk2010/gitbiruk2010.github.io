@@ -22,7 +22,8 @@
 
   <!-- Banner Section with illustration and code flow animation -->
   <header class="banner">
-    <!-- Banner image: realistic illustration of a man coding. Source: Pixabay -->
+    <!-- Banner image: realistic illustration of a man coding.
+         Source: Pixabay (https://pixabay.com/illustrations/coding-man-programming-technology-7939372/) -->
     <img src="images/banner.jpg" alt="Banner: Man coding at a computer" class="banner-image" />
     <!-- Overlay code snippet that scrolls upward like 'tree' command output -->
     <div class="code-flow">
@@ -66,27 +67,139 @@
   </header>
   <div class="glow-divider"></div>
 
+
   <!-- Main Content: Practicum Progress Update Card -->
    <div class="page-content">
     <main>
     <section class="card">
         <h2>Practicum Progress Update</h2>
-        <!-- ... (existing content unchanged) ... -->
+
+        <!-- Project Overview -->
+        <button class="accordion">Project Overview</button>
+        <div class="panel">
+        <p>
+            The practicum & Capstone projects involve collaborating with peer developers and maintaining multiple web applications. The projects focus on building decent frontend interfaces and backend across repositories such as <strong>Belinda’s Closet</strong>, <strong>NSC Events</strong>, and others under SeattleColleges.
+        </p>
+        </div>
+
+        <!-- My Role -->
+        <button class="accordion">My Role</button>
+        <div class="panel">
+        <p>I am contributing as a Developer and my responsibilities include:</p>
+        <ul>
+            <li>Cloning and setting up full-stack projects (frontend and backend)</li>
+            <li>Actively bug hunting and reporting issues</li>
+            <li>Implementing and testing new features</li>
+            <li>Reviewing pull requests and providing detailed feedback</li>
+            <li>Collaborating via GitHub and Slack</li>
+            <li>Ensuring cross-repo compatibility and communication</li>
+        </ul>
+        </div>
+
+        <!-- Weekly Highlights -->
+        <button class="accordion">Weekly Highlights (Week 2–6)</button>
+        <div class="panel">
+        <h3>Week 2</h3>
+        <ul>
+            <li>Cloned and set up <strong>NSC Events</strong> and <strong>Belinda’s Closet</strong> projects (frontend & backend)</li>
+            <li>Created admin, creator, and user accounts to simulate bug scenarios</li>
+            <li>Started bug hunting and submitted first bug as admin</li>
+            <li>Reviewed PRs and tested bug fixes</li>
+        </ul>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/issues/638">Issue</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/pull/639">PR</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/645#pullrequestreview-2779376139">Review</a>
+
+        <h3>Week 3</h3>
+        <ul>
+            <li>Continued bug hunting and implemented fixes</li>
+            <li>Addressed a bug related to MUI v7 and caret updates</li>
+            <li>Submitted fix and provided video demonstration</li>
+        </ul>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/issues/643">Issue</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/pull/644">PR</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/647#pullrequestreview-2797730566">Review</a>
+
+        <h3>Week 4</h3>
+        <ul>
+            <li>Developed new admin feature on <strong>NSC Events</strong> to view attendee list</li>
+            <li>Added CSV export functionality (additional feature)</li>
+        </ul>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/issues/657">Issue</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs">Repo</a>
+
+        <h3>Week 5</h3>
+        <ul>
+            <li>Completed frontend and backend changes for attendee feature</li>
+            <li>Submitted and merged PRs for both ends</li>
+            <li>Reviewed multiple PRs across repos</li>
+        </ul>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/662#issue-3047410415">Frontend PR</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nestjs/pull/185">Backend PR</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/656#pullrequestreview-2813592843">PR Reviews</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/pull/650#pullrequestreview-2813601193">More Reviews</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/NextWaveDev/pull/9#pullrequestreview-2814154165">NextWaveDev</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/653#pullrequestreview-2814390247">Another PR</a>
+
+        <h3>Week 6</h3>
+        <ul>
+            <li>Fixed a build error caused by a previously merged issue</li>
+            <li>Opened new PR with corrected syntax and deployment fix</li>
+            <li>Reviewed a PR that required AWS S3 setup and backend coordination</li>
+        </ul>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/issues/652">Issue</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/belindas-closet-nextjs/pull/653">PR</a><br>
+        🔗 <a href="https://github.com/SeattleColleges/nsc-events-nextjs/pull/670#pullrequestreview-2847493040">Review</a>
+        </div>
+
+        <!-- Visuals -->
+        <button class="accordion">Visuals / Screenshots</button>
+        <div class="panel">
+        <p>Feature Design and implementation</p>
+        <img src="https://github.com/user-attachments/assets/9fb43f77-7066-4d41-ad7c-e84605fe1d94" alt="Feature design" style="max-width:100%; margin-bottom:1em;" />
+        <p>Testing PR screenshot</p>
+        <img src="https://github.com/user-attachments/assets/d1199953-61bb-400d-a1fe-0dbb1a8742c3" alt="PR screenshot 1" style="max-width:100%; margin-bottom:1em;" />
+        <p>Testing PR screenshot</p>
+        <img src="https://github.com/user-attachments/assets/a5b76b66-18ae-4bba-a393-ba818ac5080a" alt="PR screenshot 2" style="max-width:100%;" />
+        </div>
+
+        <!-- Challenges & Solutions -->
+        <button class="accordion">Challenges &amp; Solutions</button>
+        <div class="panel">
+        <p>
+            <strong>General:</strong> I remember starting the practicum class, everything was new to me, especially the frontend and backend integration. While I was somewhat familiar with databases, I had difficulty connecting that knowledge with actual full-stack project workflows. Debugging, routing, authentication, and integrating backend APIs into frontend logic were all overwhelming at first.  
+            However, by doing it over and over again on both practicum and personal projects, I gradually improved. I made a lot of mistakes, but they were valuable. Looking back at myself three years ago and now, I can confidently say I’ve grown significantly. I now understand what goes into deploying a feature end-to-end and how to work with large codebases, APIs, and teams.
+        </p>
+        </div>
+
+        <!-- Key Learnings -->
+        <button class="accordion">Key Learnings</button>
+        <div class="panel">
+        <ul>
+            <li>Learned full-stack project setup across multiple repositories</li>
+            <li>Developed better intuition for debugging and patching frontend/backend issues</li>
+            <li>Gained confidence in writing, testing, and reviewing production-level code</li>
+            <li>Understood the value of detailed PR reviews and peer feedback</li>
+            <li>Enhanced communication and feature planning with project leads</li>
+        </ul>
+        </div>
+
+        <!-- Repositories -->
+        <button class="accordion">Repositories</button>
+        <div class="panel">
+        <p>Main repo: <a href="https://github.com/SeattleColleges" target="_blank">https://github.com/SeattleColleges</a></p>
+        <p>Project focus:</p>
+        <ul>
+            <li><a href="https://github.com/SeattleColleges/belindas-closet-nextjs" target="_blank"><strong>Belinda’s Closet</strong></a></li>
+            <li><a href="https://github.com/SeattleColleges/nsc-events-nextjs" target="_blank"><strong>NSC Events</strong></a></li>
+            <li><a href="https://github.com/SeattleColleges/NextWaveDev" target="_blank"><strong>NextWaveDev</strong></a></li>
+            <li><a href="https://github.com/PelletierConstructionGroup/pelletier-construction-group-nextjs" target="_blank"><strong>PCG</strong></a></li>
+        </ul>
+        <p>Thanks for reading! Keep coding 😂</p>
+        </div>
     </section>
     </main>
     </div>
   <script src="js/script.js"></script>
-
-  <!-- Memory Game Section -->
-  <section id="memory-game-section" style="margin-top: 2em; text-align: center;">
-    <h2>🎮 Funny Memory Game</h2>
-    <button id="music-toggle" aria-label="Toggle music" style="margin-bottom: 1em;">🔊 Music On</button>
-    <audio id="game-music" loop>
-      <source src="assets/funny-music.mp3" type="audio/mpeg" />
-      <!-- You should provide a royalty-free mp3 in assets/funny-music.mp3 -->
-    </audio>
-    <div id="memory-game"></div>
-  </section>
-  <script src="js/memory-game.js"></script>
 </body>
 </html>
