@@ -1,34 +1,51 @@
-// Script for theme toggle and collapsible sections
-
 // Theme Toggle: Switch between dark and light themes
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-themeToggleBtn.addEventListener('click', () => {
-  // Toggle the 'light-theme' class on the document body
-  document.body.classList.toggle('light-theme');
-  // Update the theme icon (sun for light theme, moon for dark theme)
-  if (document.body.classList.contains('light-theme')) {
-    themeIcon.textContent = '🌙';  // moon symbol when switching to light mode
-  } else {
-    themeIcon.textContent = '🌞';  // sun symbol for dark mode
-  }
-});
+if (themeToggleBtn && themeIcon) {
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    themeIcon.textContent = document.body.classList.contains('light-theme') ? '🌙' : '🌞';
+  });
+}
 
 // Accordion (Collapsible Panels) functionality
 const accordions = document.querySelectorAll('.accordion');
 accordions.forEach(acc => {
   acc.addEventListener('click', () => {
-    // Toggle active state for accordion button
     acc.classList.toggle('active');
-    // Expand or collapse the associated panel
     const panel = acc.nextElementSibling;
     if (panel.style.maxHeight) {
-      // If panel is open, close it
       panel.style.maxHeight = null;
     } else {
-      // If panel is closed, open it to fit its content
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   });
 });
+
+// Automatically open external links in a new tab
+document.querySelectorAll('a[href^="http"]').forEach(link => {
+  const host = window.location.host;
+  if (!link.href.includes(host)) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+  }
+});
+
+// Rotating header logo every 2 seconds
+const logoImages = [
+  './images/logo01.png',
+  './images/logo02.png',
+  './images/logo03.png',
+  './images/logo04.png'
+];
+
+let currentLogoIndex = 0;
+const logoElement = document.getElementById('rotating-logo');
+
+if (logoElement) {
+  setInterval(() => {
+    currentLogoIndex = (currentLogoIndex + 1) % logoImages.length;
+    logoElement.src = logoImages[currentLogoIndex];
+  }, 2000); // 2 seconds
+}
