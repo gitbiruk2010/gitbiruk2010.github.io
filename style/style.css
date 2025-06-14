@@ -3,16 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #5c7f96; /* Dark gray */
+  /* background-color: #5c7f96; */
   color: #ffffff;
   flex-wrap: wrap;
+  background-color: rgb(36, 15, 3);
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #d0d5d6; /* Light gray */
+  background-color: rgb(179, 171, 166);
   color: white;
 }
 
@@ -32,8 +33,6 @@ body {
   border: none;
   border-radius: 0;
 }
-
-
 
 @media (max-width: 768px) {
   .profile-header {
@@ -96,9 +95,7 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
- 
 }
-
 
 .card-link {
   text-decoration: none;
@@ -106,7 +103,7 @@ body {
 
 .card {
   background-color: #ffffff;
-  border-left: 6px solid #007acc;
+  border-left: 6px solid #523106;
   padding: 2rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -129,18 +126,18 @@ body {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  background-color: #f7f9fc;
+  background-color: #cab9a8;
 }
 
 /* week 02 - 06 style */
 /* Detail page content card */
 .detail-card {
-  background-color: #ffffff;
+  background-color: rgb(238, 235, 231);
   margin: 2rem auto;
   padding: 2.5rem;
   border-radius: 1rem;
   max-width: 1000px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #523106;
   color: #333;
 }
 
@@ -198,7 +195,7 @@ body {
   line-height: 1.6;
 }
 
-/* Projects page */ 
+/* Projects page */
 .banner {
   background-color: #2e2e2e;
   color: #ffffff;
@@ -228,7 +225,7 @@ body {
 .project-card {
   display: block;
   background-color: #ffffff;
-  border-left: 6px solid #007acc;
+  border-left: 6px solid #523106; /*HERE*/
   padding: 2rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -253,14 +250,14 @@ body {
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  background-color: #f7f9fc;
+  background-color: #cab9a8;
 }
 
 .page-content h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #007acc;
+  color: #523106;
 }
 
 .author-info {
@@ -290,8 +287,8 @@ body {
 
 /* Footer */
 
-/* Ensure full height layout */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -310,10 +307,11 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  /* background-color: black; */
   color: #ffffff;
   padding: 1rem 2rem;
   flex-wrap: wrap;
+  background-color: rgb(36, 15, 3);
 }
 
 .footer-logo {
@@ -357,4 +355,3 @@ html, body {
     order: 0;
   }
 }
-
