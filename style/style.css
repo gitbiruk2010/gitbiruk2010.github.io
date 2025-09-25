@@ -13,14 +13,26 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   margin: 0;
   padding: 0;
   background: var(--dark-bg);
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(120, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(120, 200, 255, 0.2) 0%,
+      transparent 50%
+    );
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
@@ -39,13 +51,14 @@ body {
 }
 
 .profile-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="40%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><rect width="11" height="11" fill="url(%23a)" rx="2" ry="2" transform="translate(0 0)"/></svg>') repeat;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="40%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><rect width="11" height="11" fill="url(%23a)" rx="2" ry="2" transform="translate(0 0)"/></svg>')
+    repeat;
   opacity: 0.1;
 }
 
@@ -204,7 +217,7 @@ body {
 }
 
 .interest-category::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -233,7 +246,11 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -267,7 +284,11 @@ body {
 }
 
 .special-card {
-  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.1) 0%,
+    rgba(255, 152, 0, 0.1) 100%
+  );
   border-color: rgba(255, 193, 7, 0.3);
 }
 
@@ -280,7 +301,8 @@ body {
 }
 
 @keyframes wiggle {
-  0%, 7% {
+  0%,
+  7% {
     transform: rotateZ(0);
   }
   15% {
@@ -298,7 +320,8 @@ body {
   35% {
     transform: rotateZ(-4deg);
   }
-  40%, 100% {
+  40%,
+  100% {
     transform: rotateZ(0);
   }
 }
@@ -323,7 +346,8 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -393,7 +417,7 @@ body {
 }
 
 .nav-links li a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -462,7 +486,7 @@ body {
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -543,7 +567,7 @@ body {
 }
 
 .education-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -595,7 +619,7 @@ body {
 }
 
 .education-badge.aws {
-  background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%);
+  background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
 }
 
 .aws-card {
@@ -603,7 +627,7 @@ body {
 }
 
 .aws-card::before {
-  background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%);
+  background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
 }
 
 .credentials-link {
@@ -614,7 +638,7 @@ body {
 .view-credentials-btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%);
+  background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
   color: white;
   text-decoration: none;
   border-radius: 30px;
@@ -728,7 +752,7 @@ body {
 }
 
 .detail-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -815,13 +839,14 @@ body {
 }
 
 .banner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="40%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><rect width="11" height="11" fill="url(%23a)" rx="2" ry="2" transform="translate(0 0)"/></svg>') repeat;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="40%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><rect width="11" height="11" fill="url(%23a)" rx="2" ry="2" transform="translate(0 0)"/></svg>')
+    repeat;
   opacity: 0.1;
 }
 
@@ -862,7 +887,7 @@ body {
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -951,6 +976,102 @@ body {
   flex-direction: column;
 }
 
+/* Dog Card Special Styling */
+.dog-card {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem !important;
+  min-height: 160px;
+}
+
+.dog-profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dog-profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffd700;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+  transition: var(--transition);
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  padding: 2px;
+}
+
+.dog-profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.5);
+}
+
+.dog-emoji {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem !important;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  animation: dogWiggle 2s ease-in-out infinite;
+}
+
+.dog-content {
+  flex: 1;
+  text-align: left;
+}
+
+.dog-content h3 {
+  margin-bottom: 0.5rem !important;
+  color: #ffd700 !important;
+  font-size: 1.4rem !important;
+}
+
+.dog-content p {
+  margin: 0 !important;
+  line-height: 1.6;
+}
+
+@keyframes dogWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Fallback image styling */
+.dog-profile-image[src*="bucho.jpg"]:not([src]) {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b6914;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.dog-profile-image[src*="bucho.jpg"]:not([src])::after {
+  content: "🐕";
+  font-size: 2rem;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .profile-header {
@@ -972,92 +1093,116 @@ body {
     width: 150px;
     height: 150px;
   }
-  
+
   .site-footer {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .nav-links {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
   }
-  
+
   .card-container {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
   }
-  
+
   .tech-stack {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
   }
-  
+
   .tech-stack-section {
     padding: 3rem 0;
   }
-  
+
   .tech-stack-section .page-content h2 {
     font-size: 2rem;
   }
-  
+
   .interests-section {
     padding: 3rem 0;
   }
-  
+
   .interests-section .page-content h2 {
     font-size: 2rem;
   }
-  
+
   .interests-intro {
     font-size: 1.1rem;
     margin: 0 auto 2rem;
     padding: 0 1rem;
   }
-  
+
   .interests-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
   }
-  
+
+  /* Mobile dog card adjustments */
+  .dog-card {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem !important;
+  }
+
+  .dog-content {
+    text-align: center !important;
+  }
+
+  .dog-profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .dog-emoji {
+    top: -8px;
+    right: -8px;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 1.2rem !important;
+  }
+
   .interest-category h3 {
     font-size: 1.3rem;
   }
-  
+
   .interest-category p {
     font-size: 1rem;
   }
-  
+
   .interest-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .education-container {
     padding: 0 1rem 3rem;
   }
-  
+
   .education-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .education-category-title {
     font-size: 1.5rem;
   }
-  
+
   .education-card h4 {
     font-size: 1.2rem;
   }
-  
+
   .view-credentials-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
