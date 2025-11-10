@@ -169,3 +169,36 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => typeWriter(mainTitle, originalText, 80), 500);
   }
 });
+
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navbar = document.querySelector('.navbar');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      navbar.classList.toggle('nav-open');
+    });
+
+    // Close menu when clicking on a link (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        navbar.classList.remove('nav-open');
+      });
+    });
+
+    // Close menu when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        navbar.classList.remove('nav-open');
+      }
+    });
+  }
+});

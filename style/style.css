@@ -382,7 +382,7 @@ body {
   backdrop-filter: blur(10px);
   color: var(--text-primary);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   position: sticky;
@@ -450,6 +450,56 @@ body {
 
 #theme-toggle:hover {
   transform: rotate(180deg);
+}
+
+/* Navigation Brand */
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.nav-brand a {
+  color: var(--text-primary);
+  text-decoration: none;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: var(--text-primary);
+  transition: var(--transition);
+  transform-origin: center;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 .card-container {
@@ -1074,10 +1124,59 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  /* Mobile Navigation */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 300px;
+    background: rgba(15, 15, 35, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    display: block;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  .nav-links li a:hover {
+    background: var(--accent-gradient);
+    transform: translateY(-2px);
+  }
+
+  /* Mobile Header */
   .profile-header {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    min-height: auto;
   }
 
   .profile-left {
@@ -1085,24 +1184,27 @@ body {
   }
 
   .profile-left h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .profile-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .profile-image {
     margin-bottom: 2rem;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 
+  /* Mobile Footer */
   .site-footer {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
+    padding: 2rem 1rem;
   }
 
   .projects-grid {
@@ -1507,6 +1609,9 @@ body {
 /* Role Section */
 .role-section {
   background: rgba(255, 255, 255, 0.02);
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .role-grid {
@@ -2159,55 +2264,120 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .dev-update-header {
-    min-height: auto;
+    min-height: 600px;
     padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
   }
 
   .header-content {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
   }
 
   .header-left {
     max-width: 100%;
+    margin-bottom: 1rem;
   }
 
   .header-left h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
 
   .header-left h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .project-badges {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 
   .project-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     min-width: auto;
     width: 100%;
+    margin-top: 0;
   }
 
+  .stat-item {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  /* Mobile Timeline Improvements */
   .timeline::before {
-    left: 2rem;
+    left: 1.2rem;
   }
 
   .timeline-item {
     flex-direction: column !important;
+    margin-bottom: 2rem;
   }
 
   .timeline-item:nth-child(odd) .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
-    margin-left: 4rem;
-    margin-right: 0;
-    width: calc(100% - 4rem);
+    margin-left: 2.7rem;
+    margin-right: 0.5rem;
+    width: calc(100% - 3.2rem);
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .timeline-marker {
-    left: 2rem;
+    left: 1.2rem;
     transform: translateX(-50%);
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 0.9rem;
   }
 
+  .timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .work-category h4 {
+    font-size: 1rem;
+  }
+
+  .work-category li {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Mobile Grid Layouts */
   .overview-grid,
   .role-grid,
   .achievements-grid,
@@ -2216,21 +2386,173 @@ body {
   .resources-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
   }
 
+  /* Mobile Section Improvements */
   .section {
-    padding: 3rem 0;
+    padding: 2rem 0;
+    margin-top: 1rem;
+  }
+
+  .role-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    line-height: 1.3;
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .project-badges {
     justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  /* Mobile Cards */
+  .overview-card,
+  .role-card,
+  .achievement-card,
+  .learning-card,
+  .resource-card,
+  .metric-category {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-card h3,
+  .role-card h3,
+  .learning-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Mobile Achievement Cards */
+  .achievement-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .code-snippet {
+    overflow-x: auto;
+    font-size: 0.8rem;
+  }
+
+  /* Mobile Metrics */
+  .metric-items {
+    gap: 0.5rem;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .metric-label {
+    font-size: 0.8rem;
+  }
+
+  /* Mobile Interests Section */
+  .interests-intro {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .interests-grid {
+    padding: 0 1rem;
+  }
+
+  .interest-category {
+    padding: 1.5rem;
+  }
+
+  .interest-category h3 {
+    font-size: 1.2rem;
+  }
+
+  .interest-category p {
+    font-size: 0.95rem;
+  }
+
+  /* Mobile Dog Card */
+  .dog-card {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem !important;
+  }
+
+  .dog-content {
+    text-align: center !important;
+  }
+
+  .dog-profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .dog-emoji {
+    top: -8px;
+    right: -8px;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* Mobile Tech Stack */
+  .tech-stack {
+    padding: 0 1rem;
+  }
+
+  .tech-category {
+    padding: 1.5rem;
+  }
+
+  .tech-badges {
+    gap: 0.5rem;
+  }
+
+  .tech-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Mobile Education */
+  .education-container {
+    padding: 0 1rem 2rem;
+  }
+
+  .education-cards {
+    gap: 1rem;
+  }
+
+  .education-card {
+    padding: 1.5rem;
+  }
+
+  .education-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .view-credentials-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
