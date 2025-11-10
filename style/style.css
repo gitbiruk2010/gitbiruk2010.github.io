@@ -1470,12 +1470,6 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
 .overview-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1547,13 +1541,6 @@ body {
 .role-card:hover {
   transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4);
-}
-
-.role-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-  text-align: center;
 }
 
 .role-card h3 {
@@ -1793,10 +1780,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.achievement-icon {
-  font-size: 2.5rem;
-}
-
 .achievement-card h3 {
   font-size: 1.4rem;
   font-weight: 700;
@@ -1989,13 +1972,6 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.learning-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-  text-align: center;
-}
-
 .learning-card h3 {
   font-size: 1.3rem;
   font-weight: 700;
@@ -2078,12 +2054,6 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
   color: var(--text-primary);
   text-decoration: none;
-}
-
-.resource-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
 }
 
 .resource-card h3 {
