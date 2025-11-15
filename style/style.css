@@ -1,12 +1,12 @@
 /* Modern CSS Variables for consistent theming */
 :root {
-  --primary-gradient: linear-gradient(135deg, #4b5db8 0%, #552f7c 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #286194 0%, #3874c2 100%);
-  --dark-bg: #0f0f23;
-  --card-bg: rgba(255, 255, 255, 0.1);
+  --primary-gradient: linear-gradient(135deg, #9497a8 0%, #a7ccdd 100%);
+  --secondary-gradient: linear-gradient(135deg, #d792df 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #93a7b9 0%, #71a7ee 100%);
+  --dark-bg: #013149;
+  --card-bg: rgba(255, 255, 255, 0.062);
   --text-primary: #ffffff;
-  --text-secondary: #b8b9c7;
+  --text-secondary: #d2d3da;
   --border-radius: 15px;
   --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,8 +82,9 @@ body {
 .profile-description {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: var(--text-secondary);
+  /* color: var(--text-secondary); */
   line-height: 1.6;
+  color: rgb(5, 6, 14);
 }
 
 /* Tech Stack Section */
@@ -95,6 +96,7 @@ body {
 
 .tech-stack-section .page-content h2 {
   font-size: 2.5rem;
+  /* color: black; */
   font-weight: 800;
   margin-bottom: 3rem;
   background: var(--primary-gradient);
@@ -150,7 +152,7 @@ body {
 }
 
 .tech-badge {
-  background: var(--accent-gradient);
+  /* background: var(--accent-gradient); */
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
@@ -659,7 +661,7 @@ body {
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 600;
-  background: var(--accent-gradient);
+  /* background: var(--accent-gradient); */
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -1060,26 +1062,10 @@ body {
   box-shadow: 0 12px 30px rgba(255, 215, 0, 0.5);
 }
 
-.dog-emoji {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 1.5rem !important;
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
-  width: 35px !important;
-  height: 35px !important;
-  border-radius: 50%;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-  animation: dogWiggle 2s ease-in-out infinite;
-}
 
 .dog-content {
   flex: 1;
-  text-align: left;
+  text-align: center !important;
 }
 
 .dog-content h3 {
@@ -1108,7 +1094,7 @@ body {
 
 /* Fallback image styling */
 .dog-profile-image[src*="bucho.jpg"]:not([src]) {
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  background: linear-gradient(135deg, #383534, #ffed4e);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1117,10 +1103,10 @@ body {
   font-size: 0.8rem;
 }
 
-.dog-profile-image[src*="bucho.jpg"]:not([src])::after {
+/* .dog-profile-image[src*="bucho.jpg"]:not([src])::after {
   content: "🐕";
   font-size: 2rem;
-}
+} */
 
 /* Responsive design */
 @media (max-width: 768px) {
