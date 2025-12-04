@@ -17,22 +17,8 @@ body {
     sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--dark-bg);
-  background-image: radial-gradient(
-      circle at 20% 80%,
-      rgba(120, 119, 198, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(255, 119, 198, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(120, 200, 255, 0.2) 0%,
-      transparent 50%
-    );
+  background: linear-gradient(135deg, #013149 0%, #1a3a52 25%, #2a4a62 50%, #1a3a52 75%, #013149 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
@@ -90,7 +76,6 @@ body {
 /* Tech Stack Section */
 .tech-stack-section {
   padding: 4rem 0;
-  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
 }
 
@@ -171,7 +156,6 @@ body {
 /* Personal Interests Section */
 .interests-section {
   padding: 4rem 0;
-  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
 }
 
@@ -387,8 +371,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -437,6 +422,17 @@ body {
 .nav-links li a:hover {
   color: white;
   transform: translateY(-2px);
+}
+
+/* Active page indicator */
+.nav-links li a.active {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 15px rgba(113, 167, 238, 0.4);
+}
+
+.nav-links li a.active::before {
+  left: 0;
 }
 
 #theme-toggle {
@@ -1026,6 +1022,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-top: 70px;
 }
 
 /* Dog Card Special Styling */
@@ -1495,10 +1492,6 @@ body {
   padding: 4rem 0;
 }
 
-.section:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1594,7 +1587,6 @@ body {
 
 /* Role Section */
 .role-section {
-  background: rgba(255, 255, 255, 0.02);
   margin-top: 2rem;
   position: relative;
   z-index: 1;
@@ -1677,10 +1669,6 @@ body {
 }
 
 /* Timeline Section */
-.timeline-section {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -1752,10 +1740,8 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: var(--secondary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Simple, clean and readable */
+  color: var(--text-primary);
 }
 
 .work-categories {
@@ -1800,6 +1786,28 @@ body {
   left: 0;
   color: #4facfe;
   font-size: 0.7rem;
+}
+
+/* ========================================================================== */
+/* CONTENT LINK STYLES - Visible links inside cards and content areas */
+/* ========================================================================== */
+.work-category a,
+.timeline-content a:not(.issue-links a),
+.role-card a,
+.learning-card a {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(100, 181, 246, 0.3);
+}
+
+.work-category a:hover,
+.timeline-content a:not(.issue-links a):hover,
+.role-card a:hover,
+.learning-card a:hover {
+  color: #90caf9;
+  border-bottom: 1px solid #90caf9;
 }
 
 .key-issues {
@@ -1960,10 +1968,6 @@ body {
 } */
 
 /* Metrics Section */
-.metrics-section {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -2122,10 +2126,6 @@ body {
 }
 
 /* Resources Section */
-.resources-section {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
