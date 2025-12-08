@@ -1,6 +1,6 @@
 /* Modern CSS Variables for consistent theming */
 :root {
-  --primary-gradient: linear-gradient(135deg, #9497a8 0%, #a7ccdd 100%);
+  --primary-gradient: linear-gradient(135deg, #666879 0%, #4f87a1 100%);
   --secondary-gradient: linear-gradient(135deg, #d792df 0%, #f5576c 100%);
   --accent-gradient: linear-gradient(135deg, #93a7b9 0%, #71a7ee 100%);
   --dark-bg: #013149;
@@ -28,12 +28,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   background: var(--primary-gradient);
   color: var(--text-primary);
   flex-wrap: wrap;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  min-height: 220px;
+  box-sizing: border-box;
 }
 
 .profile-header::before {
@@ -55,7 +57,7 @@ body {
 }
 
 .profile-left h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
   font-weight: 800;
   background: linear-gradient(45deg, #ffffff, #e0e0ff);
@@ -155,7 +157,7 @@ body {
 
 /* Personal Interests Section */
 .interests-section {
-  padding: 4rem 0;
+  /* padding: 2rem; */
   backdrop-filter: blur(10px);
 }
 
@@ -175,7 +177,7 @@ body {
   color: var(--text-secondary);
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   line-height: 1.6;
   font-style: italic;
 }
@@ -338,28 +340,6 @@ body {
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-@media (max-width: 768px) {
-  .profile-header {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-
-  .profile-left {
-    max-width: 100%;
-  }
-
-  .profile-left h1 {
-    font-size: 2.5rem;
-  }
-
-  .profile-image {
-    margin-bottom: 2rem;
-    width: 150px;
-    height: 150px;
   }
 }
 
@@ -705,7 +685,7 @@ body {
 /* Modern page content styling */
 .page-content {
   text-align: center;
-  padding: 3rem 2rem 2rem;
+  padding: 2.5rem 2rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -909,8 +889,8 @@ body {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  padding: 2rem 0;
+  gap: 2rem;
+  padding: 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -931,7 +911,6 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 120px;
-  margin-top: 1rem;
 }
 
 .project-card::before {
@@ -1158,8 +1137,9 @@ body {
   .profile-header {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     min-height: auto;
+    overflow: visible;
   }
 
   .profile-left {
@@ -1167,17 +1147,18 @@ body {
   }
 
   .profile-left h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 1.3;
+    margin-bottom: 1rem;
   }
 
   .profile-description {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
   .profile-image {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 120px;
     height: 120px;
   }
@@ -1359,12 +1340,15 @@ body {
 .dev-update-header {
   background: var(--primary-gradient);
   color: var(--text-primary);
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
+  padding-top: 4rem;
+  margin-top: 70px;
   position: relative;
-  overflow: hidden;
-  min-height: 400px;
+  overflow: visible;
+  min-height: auto;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .dev-update-header::before {
@@ -1489,7 +1473,7 @@ body {
 
 /* Section Styling */
 .section {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .container {
@@ -1502,8 +1486,8 @@ body {
   font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 3rem;
-  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2250,16 +2234,19 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .dev-update-header {
-    min-height: 600px;
-    padding: 3rem 1rem;
+    min-height: auto;
+    padding: 2rem 1.5rem;
+    padding-top: 3rem;
+    margin-top: 60px;
     display: flex;
     align-items: center;
+    overflow: visible;
   }
 
   .header-content {
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 1.25rem;
     max-width: 100%;
     padding: 0;
     width: 100%;
@@ -2267,58 +2254,58 @@ body {
 
   .header-left {
     max-width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .header-left h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
   }
 
   .header-left h2 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
     line-height: 1.4;
   }
 
   .project-badges {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
   }
 
   .badge {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
   }
 
   .project-stats {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
     min-width: auto;
     width: 100%;
     margin-top: 0;
   }
 
   .stat-item {
-    padding: 1.2rem 0.8rem;
+    padding: 0.75rem 0.4rem;
   }
 
   .stat-number {
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
   }
 
   .stat-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     line-height: 1.2;
   }
 
@@ -2377,18 +2364,19 @@ body {
 
   /* Mobile Section Improvements */
   .section {
-    padding: 2rem 0;
-    margin-top: 1rem;
+    padding: 1.5rem 0;
+    margin-top: 0;
   }
 
   .role-section {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
   }
 
   .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
     padding: 0 1rem;
     line-height: 1.3;
   }
@@ -2540,5 +2528,91 @@ body {
   .view-credentials-btn {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .dev-update-header {
+    padding: 1.5rem 1rem;
+    padding-top: 2.5rem;
+    margin-top: 55px;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .profile-left h1,
+  .header-left h1 {
+    font-size: 1.4rem;
+  }
+
+  .profile-left h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 0.75rem;
+  }
+
+  .header-left h2 {
+    font-size: 0.95rem;
+  }
+
+  .profile-description,
+  .header-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-stats {
+    gap: 0.4rem;
+  }
+
+  .stat-item {
+    padding: 0.6rem 0.2rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+
+  .wrapper {
+    padding-top: 60px;
+  }
+
+  .section {
+    padding: 1.25rem 0;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
 }
