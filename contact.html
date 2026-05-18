@@ -1,24 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - gitbiruk2010 Portfolio</title>
-    <link rel="stylesheet" href="style/style.css" />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <!-- Navigation Bar (same as other pages) -->
-      <nav class="navbar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — gitbiruk2010 Portfolio</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-titlebar">
         <div class="nav-brand">
-          <a href="index.html">gitbiruk2010</a>
+          <span class="nav-brand-icon">🖥️</span>
+          <a href="index.html">gitbiruk2010 — Portfolio</a>
         </div>
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          aria-label="Toggle navigation"
-        >
+      </div>
+      <div class="nav-menubar">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -28,59 +29,46 @@
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-      </nav>
-      <header class="profile-header">
-        <div class="profile-left">
-          <h1>Keep in touch ...</h1>
-          <p class="profile-description">
-            I'm always open to discussing new opportunities, collaborations, or
-            just connecting with fellow developers. Feel free to reach out
-            through any of the platforms below.
-          </p>
-        </div>
-        <div class="profile-right">
-          <a href="index.html">
-            <img
-              src="./images/logo01.png"
-              alt="Rotating Logo"
-              class="profile-image"
-              id="rotating-logo"
-            />
-          </a>
-        </div>
-      </header>
-      <div class="page-content">
-        <main>
-          <h1>Contact</h1>
-          <!-- Author/Developer Description -->
-          <section class="author-info">
-            <p>
-              I am an <strong>Application Developer</strong> passionate about
-              building web applications and learning new technologies. Feel free
-              to reach out or explore my work using the links below.
-            </p>
-            <p>
-              GitHub:
-              <a
-                href="https://github.com/gitbiruk2010"
-                target="_blank"
-                rel="noopener"
-                >github.com/gitbiruk2010</a
-              >
-            </p>
-            <p align="center">
-              <a href="mailto:birukgzb@gmail.com">
-                <img
-                  src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white"
-                  alt="Email"
-                />
-              </a>
-            </p>
-          </section>
-        </main>
       </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="profile-header">
+      <div class="profile-left">
+        <h1>Keep in touch</h1>
+        <p class="profile-description">
+          I'm always open to discussing new opportunities, collaborations, or
+          just connecting with fellow developers. Feel free to reach out
+          through any of the platforms below.
+        </p>
+      </div>
+      <div class="profile-right">
+        <a href="index.html">
+          <img src="./images/logo01.png" alt="Rotating Logo" class="profile-image" id="rotating-logo" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Contact Content -->
+    <div class="page-content">
+      <main>
+        <h1>Contact</h1>
+        <section class="author-info">
+
+          <p>
+            GitHub:
+            <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener">github.com/gitbiruk2010</a>
+          </p>
+          <p align="center">
+            <a href="mailto:birukgzb@gmail.com">
+              <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email" />
+            </a>
+          </p>
+        </section>
+      </main>
     </div>
-    <script src="./js/script.js"></script>
+
+    <!-- Footer / Status Bar -->
     <footer class="site-footer">
       <div class="footer-left">
         <img src="./images/footer-logo.png" alt="Logo" class="footer-logo" />
@@ -89,10 +77,20 @@
         <p>&copy; 2025 gitbiruk2010. All rights reserved.</p>
       </div>
       <div class="footer-right">
-        <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener"
-          >Repositories</a
-        >
+        <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener">Repositories</a>
       </div>
     </footer>
-  </body>
+  </div>
+  <!-- end .wrapper -->
+
+  <!-- Taskbar -->
+  <div class="win98-taskbar">
+    <div class="taskbar-divider"></div>
+    <a href="contact.html" class="taskbar-active-btn">✉️ Contact</a>
+    <div class="taskbar-clock" id="taskbar-clock">12:00 PM</div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
 </html>

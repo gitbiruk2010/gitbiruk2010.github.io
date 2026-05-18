@@ -1,32 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - gitbiruk2010 Portfolio</title>
+    <title>Home — gitbiruk2010 Portfolio</title>
     <link rel="stylesheet" href="style/style.css" />
   </head>
 
   <body>
     <div class="wrapper">
-      <!-- Navigation Bar -->
+      <!-- Navigation -->
       <nav class="navbar">
-        <div class="nav-brand">
-          <a href="index.html">gitbiruk2010</a>
+        <div class="nav-titlebar">
+          <div class="nav-brand">
+            <span class="nav-brand-icon">🖥️</span>
+            <a href="index.html">gitbiruk2010 — Portfolio</a>
+          </div>
         </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="nav-menubar">
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Toggle navigation"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
       </nav>
 
-      <!-- Banner Section with illustration and code flow animation -->
+      <!-- Hero -->
       <header class="profile-header">
         <div class="profile-left">
           <h1>Full-Stack Developer</h1>
@@ -48,9 +57,58 @@
         </div>
       </header>
 
-      <!-- <div class="glow-divider"></div> -->
+      <!-- Mystic Square Game (between header and Beyond the Code) -->
+      <section class="game-section">
+        <div class="page-content">
+          <h2>🎮 Mystic Square</h2>
+          <p>
+            Arrange tiles 1–15 in order by clicking a tile next to the empty
+            space to slide it. Fewest moves wins!
+          </p>
+        </div>
 
-      <!-- Personal Interests Section -->
+        <div class="game-window">
+          <div class="game-titlebar">
+            <div class="game-title-text"><span>🎮</span> Mystic Square</div>
+          </div>
+
+          <div class="game-body">
+            <div class="game-stats">
+              <div class="game-stat">
+                <span class="game-stat-label">Time</span>
+                <span class="game-stat-value" id="game-time">00:00:00</span>
+              </div>
+              <div class="game-stat">
+                <span class="game-stat-label">Moves</span>
+                <span class="game-stat-value" id="game-moves">0</span>
+              </div>
+            </div>
+            <div class="game-best-row">
+              <span>Best time: <strong id="best-time">—</strong></span>
+              <span>Best moves: <strong id="best-moves">—</strong></span>
+            </div>
+
+            <div class="game-win-message" id="game-win-message">
+              <h3>🎉 Puzzle Solved!</h3>
+              <p id="win-stats-text">Great job!</p>
+            </div>
+
+            <div class="game-board" id="game-board"></div>
+
+            <div class="game-hint" id="game-hint">
+              Click a glowing tile to start!
+            </div>
+
+            <div class="game-buttons">
+              <button class="win98-btn" id="new-game-btn">New Game</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="glow-divider"></div>
+
+      <!-- Personal Interests -->
       <section class="interests-section">
         <div class="page-content">
           <h2>Beyond the Code</h2>
@@ -60,7 +118,6 @@
           </p>
 
           <div class="interests-grid">
-            <!-- Adventure & Outdoors -->
             <div class="interest-category">
               <div class="interest-icon"></div>
               <h3>Adventure Seeker</h3>
@@ -71,7 +128,6 @@
               </p>
             </div>
 
-            <!-- Community & Values -->
             <div class="interest-category">
               <div class="interest-icon"></div>
               <h3>Community Champion</h3>
@@ -82,7 +138,6 @@
               </p>
             </div>
 
-            <!-- Technology & Innovation -->
             <div class="interest-category">
               <div class="interest-icon"></div>
               <h3>Tech Enthusiast</h3>
@@ -93,7 +148,6 @@
               </p>
             </div>
 
-            <!-- Creative & Hands-on -->
             <div class="interest-category">
               <div class="interest-icon"></div>
               <h3>Hands-On Creator</h3>
@@ -105,34 +159,14 @@
               </p>
             </div>
 
-            <!-- Entertainment & Lifestyle -->
             <div class="interest-category">
               <div class="interest-icon"></div>
-              <h3>Culture & Entertainment</h3>
+              <h3>Culture &amp; Entertainment</h3>
               <p>
                 Enjoy <strong>music</strong>,
                 <strong>sci-fi movies and shows</strong> that spark imagination
                 and expand my worldview.
               </p>
-            </div>
-
-            <!-- Personal Life -->
-            <div class="interest-category special-card dog-card">
-              <div class="dog-profile-section">
-                <img
-                  src="./images/bucho.jpg"
-                  alt="Bucho - My miniature schnauzer"
-                  class="dog-profile-image"
-                />
-                <div class="interest-icon dog-emoji"></div>
-              </div>
-              <div class="dog-content">
-                <h3>My beloved Bucho</h3>
-                <p>
-                  Proud parent to <strong>Bucho</strong>, my adorable miniature
-                  schnauzer who keeps me grounded and brings joy to every day!
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -140,7 +174,7 @@
 
       <div class="glow-divider"></div>
 
-      <!-- Tech Stack Section -->
+      <!-- Tech Stack -->
       <section class="tech-stack-section">
         <div class="page-content">
           <h2>Technical Expertise</h2>
@@ -167,11 +201,12 @@
                 <span class="tech-badge">NestJS</span>
                 <span class="tech-badge">Next.js</span>
                 <span class="tech-badge">Expo</span>
+                <span class="tech-badge">React</span>
               </div>
             </div>
 
             <div class="tech-category">
-              <h4 class="tech-category-title">Tools & Runtime</h4>
+              <h4 class="tech-category-title">Tools &amp; Runtime</h4>
               <div class="tech-badges">
                 <span class="tech-badge">Node.js</span>
                 <span class="tech-badge">npm</span>
@@ -185,6 +220,7 @@
               <div class="tech-badges">
                 <span class="tech-badge">PostgreSQL</span>
                 <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">DynamoDB</span>
               </div>
             </div>
 
@@ -207,15 +243,14 @@
 
       <div class="glow-divider"></div>
 
-      <!-- Education Section -->
+      <!-- Education -->
       <main>
         <div class="page-content">
-          <h1>Education & Certifications</h1>
+          <h1>Education &amp; Certifications</h1>
         </div>
         <div class="education-container">
-          <!-- Academic Education -->
           <div class="education-category">
-            <h3 class="education-category-title">Academic Degrees</h3>
+            <h3 class="education-category-title">🎓 Academic Degrees</h3>
             <div class="education-cards">
               <div class="education-card">
                 <h4>Application Development BAS</h4>
@@ -230,9 +265,10 @@
             </div>
           </div>
 
-          <!-- Certificates -->
           <div class="education-category">
-            <h3 class="education-category-title">Professional Certificates</h3>
+            <h3 class="education-category-title">
+              📜 Professional Certificates
+            </h3>
             <div class="education-cards">
               <div class="education-card">
                 <h4>Web Application Technologies Certificate</h4>
@@ -242,7 +278,6 @@
             </div>
           </div>
 
-          <!-- AWS Certifications -->
           <div class="education-category">
             <h3 class="education-category-title">AWS Certifications</h3>
             <div class="education-cards">
@@ -282,20 +317,34 @@
           </div>
         </div>
       </main>
+
+      <!-- Footer / Status Bar -->
+      <footer class="site-footer">
+        <div class="footer-left">
+          <img src="./images/footer-logo.png" alt="Logo" class="footer-logo" />
+        </div>
+        <div class="footer-center">
+          <p>&copy; 2025 gitbiruk2010. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/gitbiruk2010"
+            target="_blank"
+            rel="noopener"
+            >Repositories</a
+          >
+        </div>
+      </footer>
     </div>
+    <!-- end .wrapper -->
+
+    <!-- Taskbar -->
+    <div class="win98-taskbar">
+      <div class="taskbar-divider"></div>
+      <a href="index.html" class="taskbar-active-btn">🏠 Home</a>
+      <div class="taskbar-clock" id="taskbar-clock">12:00 PM</div>
+    </div>
+
     <script src="./js/script.js"></script>
-    <footer class="site-footer">
-      <div class="footer-left">
-        <img src="./images/footer-logo.png" alt="Logo" class="footer-logo" />
-      </div>
-      <div class="footer-center">
-        <p>&copy; 2025 gitbiruk2010. All rights reserved.</p>
-      </div>
-      <div class="footer-right">
-        <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener"
-          >Repositories</a
-        >
-      </div>
-    </footer>
   </body>
 </html>

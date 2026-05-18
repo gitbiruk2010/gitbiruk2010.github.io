@@ -1,24 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - gitbiruk2010 Portfolio</title>
-    <link rel="stylesheet" href="style/style.css" />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <!-- Navigation Bar (same structure as index.html) -->
-      <nav class="navbar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — gitbiruk2010 Portfolio</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-titlebar">
         <div class="nav-brand">
-          <a href="index.html">gitbiruk2010</a>
+          <span class="nav-brand-icon">🖥️</span>
+          <a href="index.html">gitbiruk2010 — Portfolio</a>
         </div>
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          aria-label="Toggle navigation"
-        >
+      </div>
+      <div class="nav-menubar">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -28,83 +29,69 @@
           <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav>
-      <header class="profile-header">
-        <div class="profile-left">
-          <h1>Explore Available Projects</h1>
-          <p class="profile-description">
-            Discover a collection of my work showcasing full-stack development,
-            collaborative team projects, and innovative solutions across various
-            technologies and frameworks.
-          </p>
-        </div>
-        <div class="profile-right">
-          <a href="index.html">
-            <img
-              src="./images/logo01.png"
-              alt="Rotating Logo"
-              class="profile-image"
-              id="rotating-logo"
-            />
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="profile-header">
+      <div class="profile-left">
+        <h1>Explore Available Projects</h1>
+        <p class="profile-description">
+          Discover a collection of my work showcasing full-stack development,
+          collaborative team projects, and innovative solutions across various
+          technologies and frameworks.
+        </p>
+      </div>
+      <div class="profile-right">
+        <a href="index.html">
+          <img src="./images/logo01.png" alt="Rotating Logo" class="profile-image" id="rotating-logo" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Projects -->
+    <main>
+      <div class="page-content">
+        <h1>Projects</h1>
+        <div class="projects-grid">
+          <a href="https://github.com/SeattleColleges/nsc-events-fullstack" target="_blank" class="project-card">
+            <div class="project-icon"></div>
+            <h3>NSC Events</h3>
+            <p>
+              A full-stack web application for managing and promoting events
+              at NSC.
+            </p>
+          </a>
+
+          <a href="https://github.com/SeattleColleges/belindas-closet-fullstack" target="_blank" class="project-card">
+            <div class="project-icon"></div>
+            <h3>Belinda's Closet</h3>
+            <p>
+              An e-commerce platform for a local boutique, built with Next.js
+              and PostgreSQL.
+            </p>
+          </a>
+
+          <a href="https://github.com/PelletierConstructionGroup/pelletier-construction-group-nextjs" target="_blank"
+            class="project-card">
+            <div class="project-icon"></div>
+            <h3>Pelletier Construction Group</h3>
+            <p>A modern construction & Remodeling company website.</p>
+          </a>
+
+          <a href="https://github.com/SeattleColleges/NextWaveDev" target="_blank" class="project-card">
+            <div class="project-icon"></div>
+            <h3>NextWaveDev</h3>
+            <p>
+              A collaborative project showcasing various web development
+              technologies and best practices.
+            </p>
           </a>
         </div>
-      </header>
+      </div>
+    </main>
 
-      <!-- <div class="glow-divider"></div> -->
-
-      <!-- Main Section -->
-      <main>
-        <div class="page-content">
-          <h1>Projects</h1>
-          <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <a
-              href="https://github.com/SeattleColleges/nsc-events-fullstack"
-              target="_blank"
-              class="project-card"
-            >
-              <h3>NSC Events</h3>
-            </a>
-
-            <!-- Project Card 2 -->
-            <a
-              href="https://github.com/SeattleColleges/belindas-closet-fullstack"
-              target="_blank"
-              class="project-card"
-            >
-              <h3>Belinda’s Closet</h3>
-            </a>
-
-            <!-- Project Card 3 -->
-            <a
-              href="https://github.com/PelletierConstructionGroup/pelletier-construction-group-nextjs"
-              target="_blank"
-              class="project-card"
-            >
-              <h3>Pelletier Construction Group</h3>
-            </a>
-
-            <!-- Project Card 4 -->
-            <a
-              href="https://github.com/SeattleColleges/NextWaveDev"
-              target="_blank"
-              class="project-card"
-            >
-              <h3>NextWaveDev</h3>
-            </a>
-            <!-- Project Card 5 -->
-            <a
-              href="https://github.com/SeattleColleges/licton-springs-review-nextjs"
-              target="_blank"
-              class="project-card"
-            >
-              <h3>Licton Springs Review</h3>
-            </a>
-          </div>
-        </div>
-      </main>
-    </div>
-    <script src="./js/script.js"></script>
+    <!-- Footer / Status Bar -->
     <footer class="site-footer">
       <div class="footer-left">
         <img src="./images/footer-logo.png" alt="Logo" class="footer-logo" />
@@ -113,10 +100,20 @@
         <p>&copy; 2025 gitbiruk2010. All rights reserved.</p>
       </div>
       <div class="footer-right">
-        <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener"
-          >Repositories</a
-        >
+        <a href="https://github.com/gitbiruk2010" target="_blank" rel="noopener">Repositories</a>
       </div>
     </footer>
-  </body>
+  </div>
+  <!-- end .wrapper -->
+
+  <!-- Taskbar -->
+  <div class="win98-taskbar">
+    <div class="taskbar-divider"></div>
+    <a href="projects.html" class="taskbar-active-btn">📂 Projects</a>
+    <div class="taskbar-clock" id="taskbar-clock">12:00 PM</div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
 </html>
