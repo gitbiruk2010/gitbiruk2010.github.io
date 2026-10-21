@@ -1,84 +1,53 @@
 // ================================================================
-// HAMBURGER MENU
+// NAV (MOBILE MENU)
 // ================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks  = document.getElementById('nav-links');
-  const menubar   = document.querySelector('.nav-menubar');
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  const nav = document.querySelector('.nav');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  if (!toggle || !links) return;
+
+  function closeMenu() {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  // Bold the nav link of the section currently in view
+  const tabs = [...links.querySelectorAll('a[href^="#"]')].map(a => {
+    a.dataset.text = a.textContent;
+    return { link: a, section: document.querySelector(a.getAttribute('href')) };
+  }).filter(t => t.section);
+
+  function updateActive() {
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    let current = null;
+    tabs.forEach(t => {
+      if (t.section.getBoundingClientRect().top <= 120) current = t;
     });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (menubar && !menubar.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
+    if (atBottom) current = tabs[tabs.length - 1];
+    tabs.forEach(t => {
+      const on = t === current;
+      t.link.classList.toggle('active', on);
+      if (on) t.link.setAttribute('aria-current', 'true');
+      else t.link.removeAttribute('aria-current');
     });
   }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', updateActive);
+  updateActive();
 });
-
-// ================================================================
-// EXTERNAL LINKS
-// ================================================================
-
-document.querySelectorAll('a[href^="http"]').forEach(link => {
-  if (!link.href.includes(window.location.host)) {
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener');
-  }
-});
-
-// ================================================================
-// ROTATING LOGO
-// ================================================================
-
-const logoImages = [
-  './images/logo01.png',
-  './images/logo02.png',
-  './images/logo03.png',
-  './images/logo04.png'
-];
-
-let currentLogoIndex = 0;
-const logoElement = document.getElementById('rotating-logo');
-
-if (logoElement) {
-  setInterval(() => {
-    logoElement.style.opacity = '0.6';
-    setTimeout(() => {
-      currentLogoIndex = (currentLogoIndex + 1) % logoImages.length;
-      logoElement.src = logoImages[currentLogoIndex];
-      logoElement.style.opacity = '1';
-    }, 200);
-  }, 3000);
-}
-
-// ================================================================
-// TASKBAR CLOCK
-// ================================================================
-
-function updateClock() {
-  const clock = document.getElementById('taskbar-clock');
-  if (!clock) return;
-  const now = new Date();
-  let h = now.getHours();
-  const m = String(now.getMinutes()).padStart(2, '0');
-  const ampm = h >= 12 ? 'PM' : 'AM';
-  h = h % 12 || 12;
-  clock.textContent = `${h}:${m} ${ampm}`;
-}
-
-updateClock();
-setInterval(updateClock, 10000);
 
 // ================================================================
 // MYSTIC SQUARE GAME
@@ -88,30 +57,38 @@ setInterval(updateClock, 10000);
   const GRID = 4;
   const TOTAL = GRID * GRID;
 
-  let tiles       = [];
-  let emptyIndex  = TOTAL - 1;
-  let moveCount   = 0;
+  let tiles = [];
+  let emptyIndex = TOTAL - 1;
+  let moveCount = 0;
   let elapsedSecs = 0;
-  let timerInt    = null;
-  let gameActive  = false;
+  let timerInt = null;
+  let gameActive = false;
 
-  const boardEl   = document.getElementById('game-board');
-  const movesEl   = document.getElementById('game-moves');
-  const timeEl    = document.getElementById('game-time');
-  const dispEl    = document.getElementById('game-display-timer');
-  const winMsgEl  = document.getElementById('game-win-message');
-  const winTxtEl  = document.getElementById('win-stats-text');
-  const newBtn    = document.getElementById('new-game-btn');
-  const bestTimeEl  = document.getElementById('best-time');
+  const boardEl = document.getElementById('game-board');
+  const movesEl = document.getElementById('game-moves');
+  const timeEl = document.getElementById('game-time');
+  const winMsgEl = document.getElementById('game-win-message');
+  const winTxtEl = document.getElementById('win-stats-text');
+  const newBtn = document.getElementById('new-game-btn');
+  const bestTimeEl = document.getElementById('best-time');
   const bestMovesEl = document.getElementById('best-moves');
 
   if (!boardEl) return;
 
-  // ── Helpers ──────────────────────────────────────────────────
+  // localStorage can throw (private mode, blocked storage)
+  function store(key, value) {
+    try {
+      if (value === undefined) return localStorage.getItem(key);
+      localStorage.setItem(key, value);
+    } catch (e) {
+      return null;
+    }
+    return null;
+  }
 
   function fmt(s) {
-    const h   = String(Math.floor(s / 3600)).padStart(2, '0');
-    const m   = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+    const h = String(Math.floor(s / 3600)).padStart(2, '0');
+    const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
     const sec = String(s % 60).padStart(2, '0');
     return `${h}:${m}:${sec}`;
   }
@@ -127,9 +104,9 @@ setInterval(updateClock, 10000);
     const r = Math.floor(emptyIndex / GRID);
     const c = emptyIndex % GRID;
     const n = [];
-    if (r > 0)        n.push(emptyIndex - GRID);
+    if (r > 0) n.push(emptyIndex - GRID);
     if (r < GRID - 1) n.push(emptyIndex + GRID);
-    if (c > 0)        n.push(emptyIndex - 1);
+    if (c > 0) n.push(emptyIndex - 1);
     if (c < GRID - 1) n.push(emptyIndex + 1);
     return n;
   }
@@ -151,16 +128,13 @@ setInterval(updateClock, 10000);
       prev = emptyIndex;
       swap(pick);
     }
+    if (isSolved()) shuffle();
   }
-
-  // ── Timer ─────────────────────────────────────────────────────
 
   function startTimer() {
     timerInt = setInterval(() => {
       elapsedSecs++;
-      const t = fmt(elapsedSecs);
-      if (timeEl) timeEl.textContent = t;
-      if (dispEl)  dispEl.textContent = t;
+      if (timeEl) timeEl.textContent = fmt(elapsedSecs);
     }, 1000);
   }
 
@@ -169,11 +143,9 @@ setInterval(updateClock, 10000);
     timerInt = null;
   }
 
-  // ── Render ────────────────────────────────────────────────────
-
   function render() {
     boardEl.innerHTML = '';
-    const idle      = !gameActive && moveCount === 0;
+    const idle = !gameActive && moveCount === 0;
     const moveables = idle ? neighbors() : [];
 
     tiles.forEach((num, idx) => {
@@ -183,7 +155,7 @@ setInterval(updateClock, 10000);
       } else {
         tile.className = 'game-tile';
         if (num === idx + 1) tile.classList.add('game-tile-correct');
-        if (idle && moveables.includes(idx)) tile.classList.add('game-tile-moveable');
+        if (moveables.includes(idx)) tile.classList.add('game-tile-moveable');
         tile.textContent = num;
         tile.addEventListener('click', () => onTileClick(idx));
       }
@@ -195,8 +167,6 @@ setInterval(updateClock, 10000);
     const hintEl = document.getElementById('game-hint');
     if (hintEl) hintEl.classList.toggle('hide', !idle);
   }
-
-  // ── Click ─────────────────────────────────────────────────────
 
   function onTileClick(idx) {
     if (!neighbors().includes(idx)) return;
@@ -217,58 +187,47 @@ setInterval(updateClock, 10000);
     }
   }
 
-  // ── Win ───────────────────────────────────────────────────────
-
   function showWin() {
     if (!winMsgEl) return;
     const timeStr = fmt(elapsedSecs);
     if (winTxtEl) {
-      winTxtEl.textContent =
-        `Solved in ${moveCount} move${moveCount !== 1 ? 's' : ''} and ${timeStr}!`;
+      winTxtEl.textContent = `Solved in ${moveCount} move${moveCount !== 1 ? 's' : ''} and ${timeStr}!`;
     }
-    winMsgEl.classList.add('show', 'game-win-flash');
+    winMsgEl.classList.add('show');
 
-    const prevTime  = parseInt(localStorage.getItem('msq-best-time')  || 'Infinity', 10);
-    const prevMoves = parseInt(localStorage.getItem('msq-best-moves') || 'Infinity', 10);
+    const prevTime = parseInt(store('msq-best-time') || 'Infinity', 10);
+    const prevMoves = parseInt(store('msq-best-moves') || 'Infinity', 10);
 
     if (elapsedSecs < prevTime) {
-      localStorage.setItem('msq-best-time', elapsedSecs);
+      store('msq-best-time', elapsedSecs);
       if (bestTimeEl) bestTimeEl.textContent = timeStr;
     }
     if (moveCount < prevMoves) {
-      localStorage.setItem('msq-best-moves', moveCount);
+      store('msq-best-moves', moveCount);
       if (bestMovesEl) bestMovesEl.textContent = moveCount;
     }
   }
 
-  // ── New Game ──────────────────────────────────────────────────
-
   function newGame() {
     stopTimer();
-    moveCount   = 0;
+    moveCount = 0;
     elapsedSecs = 0;
-    gameActive  = false;
+    gameActive = false;
 
-    const zero = fmt(0);
-    if (timeEl)  timeEl.textContent  = zero;
-    if (dispEl)  dispEl.textContent  = zero;
+    if (timeEl) timeEl.textContent = fmt(0);
     if (movesEl) movesEl.textContent = '0';
-    if (winMsgEl) winMsgEl.classList.remove('show', 'game-win-flash');
+    if (winMsgEl) winMsgEl.classList.remove('show');
 
     shuffle();
     render();
   }
 
-  // ── Load Best ─────────────────────────────────────────────────
-
   function loadBest() {
-    const bt = localStorage.getItem('msq-best-time');
-    const bm = localStorage.getItem('msq-best-moves');
-    if (bt && bestTimeEl)   bestTimeEl.textContent  = fmt(parseInt(bt, 10));
-    if (bm && bestMovesEl)  bestMovesEl.textContent = bm;
+    const bt = store('msq-best-time');
+    const bm = store('msq-best-moves');
+    if (bt && bestTimeEl) bestTimeEl.textContent = fmt(parseInt(bt, 10));
+    if (bm && bestMovesEl) bestMovesEl.textContent = bm;
   }
-
-  // ── Init ──────────────────────────────────────────────────────
 
   if (newBtn) newBtn.addEventListener('click', newGame);
 
